@@ -12,30 +12,41 @@ const goods = [
 
 const $goodsList = document.querySelector('.goods-list');
 
-const renderGoodsItem = ({title, price, button}) => {
-    return `<div class="goods-item"><h3>${title}</h3><p>${price}</p><button class="button-add" onclick=addItem>${button}</button></div>`;
+// Добавил аттрибут id для кнопки, чтобы по нему можно было определить к какому элементу массива относится
+const renderGoodsItem = ({title, price, button}, id) => {
+    return `<div class="goods-item"><h3>${title}</h3><p>${price}</p><button id=btn-${id} class="button-add" onclick=addItem>${button}</button></div>`;
     };
 
 const renderGoodsList = (list = goods) => {
     let goodsList = list.map(
-    item => renderGoodsItem(item)
+    // Добавил аргумент index, который передает позицию в массиве
+    (item, index) => renderGoodsItem(item, index)
         ).join('');
-    
+
     $goodsList.insertAdjacentHTML('beforeend', goodsList);
 }
 
 renderGoodsList();
 
-
+ // Выбираем все кнопки добавить по классу .button-add
+let buttons = document.querySelectorAll('.button-add');
+// Добавляем обработчик события по нажатию на кнопку.
+buttons.forEach(btn => btn.addEventListener('click', (event) => {
+    // Из аттрибута id='btn-1' получаем номер id
+    let id = event.target.id.slice(4);
+    // Получаем цену из массива и выводим в консоль.
+    let goodPrice = goods[id].price;
+    console.log(goodPrice);
+}));
 
 
 function addItem(obj){
-	
+
     var catalog = goods[obj.target.id.split("_")[1]];
     var catalog = document.getElementsByClassName("catalog")[0];
 
     sum += catalog.price;
-    document.getElementsByClassName("sum")[0].textContent = "Sum: " + sum;    
+    document.getElementsByClassName("sum")[0].textContent = "Sum: " + sum;
 }
 
 
@@ -45,17 +56,17 @@ function addItem(obj){
 //    constructor () {
 //      this.goods = [];
 //    }
-//    
-//    
+//
+//
 //    addCartItem(GoodsItem) {
 //        this.goods.push(CartPriceall);
 //    }
 //
 //    //Метод для вывода итоговой суммы корзины
 //    CartPriceall() {
-//        let totalPrice = document.getElementById('Cart-Price-all'); 
+//        let totalPrice = document.getElementById('Cart-Price-all');
 //        let sum = 0;
-//        this.goods.forEach (good => { 
+//        this.goods.forEach (good => {
 //            sum += good.price
 //        });
 //        totalPrice.innerText = `Итого  ${sum} рублей`;
@@ -63,8 +74,8 @@ function addItem(obj){
 //
 //    render() {
 //        let listHtml = '';
-//        let goodsList = document.getElementById('Cart-Price-all'); 
-//        
+//        let goodsList = document.getElementById('Cart-Price-all');
+//
 //        this.goods.forEach (good => {
 //            const goodItem = new GoodsItem (good.title, good.price);
 //            listHtml += GoodsItem.render();
