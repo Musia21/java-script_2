@@ -1,0 +1,7 @@
+    [
+          { title: 'Shirt', price: 150, button: 'Добавить'},
+          { title: 'Socks', price: 50, button: 'Добавить'},
+          { title: 'Jacket', price: 350, button: 'Добавить'},
+          { title: 'Shoes', price: 250, button: 'Добавить'},
+    ]
+
