@@ -1,12 +1,26 @@
 const goods = [
-          { title: 'Shirt', price: 150, button: 'Добавить'},
-          { title: 'Socks', price: 50, button: 'Добавить'},
-          { title: 'Jacket', price: 350, button: 'Добавить'},
-          { title: 'Shoes', price: 250, button: 'Добавить'},
+        { title: 'Shirt', price: 150, button: 'Добавить'},
+        { title: 'Socks', price: 50, button: 'Добавить'},
+        { title: 'Jacket', price: 350, button: 'Добавить'},
+        { title: 'Shoes', price: 250, button: 'Добавить'},
         ];
 
+        class Cart {
+            constructor(title, price,quantity) {
+                this.title = title;
+                this.price = price;
+                this.quantity = quantity;
+                this.goodPrice = [];
+            }
+        }
 
+        //addallprice(allprice){
+        //    this.allprice.push(price)
+        //}
 
+        //getPrice(){
+           // return this.price
+        //}
 const $goodsList = document.querySelector('.goods-list');
 const $cartPriceall = document.querySelector('.CartPriceall');
 
@@ -28,6 +42,13 @@ buttons.forEach(btn => btn.addEventListener('click', (event) => {
     let id = event.target.id.slice(4);
     let goodPrice = goods[id].price;
 console.log(goodPrice);
+
+
+var sum = 0;
+var sum = document.getElementById("sum");
+sum.innerHTML = 'Цена:  ' + goodPrice;
+
+
 }));
 
 function addItem(obj){
@@ -37,5 +58,7 @@ function addItem(obj){
 
     sum += catalog.price;
     document.getElementsByClassName("sum")[0].textContent = "Sum: " + sum;
+
+    console.log(catalog);
 }
- let x = [];
+
