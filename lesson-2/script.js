@@ -14,13 +14,7 @@ const goods = [
             }
         }
 
-        //addallprice(allprice){
-        //    this.allprice.push(price)
-        //}
 
-        //getPrice(){
-           // return this.price
-        //}
 const $goodsList = document.querySelector('.goods-list');
 const $cartPriceall = document.querySelector('.CartPriceall');
 
