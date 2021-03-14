@@ -54,12 +54,22 @@ class GoodsItem {
     constructor(){
         this.$container = document.querySelector('header');
         this.$button = this.$container.querySelector('.cart-button');
+        this.$search = this.$container.querySelector('#search');
     }
+    setSearchHandler(callback) {
+        this.$search.addElementListener('input',callback);
+    }
+    setButtonHandler(callback) {
+        this.$button.addElementListener('click',callback);
+    }
+}
+
+
     
     setButtonHandler(callback) {
         this.$button.addEventListener('click',callback);
         }
-    }
+    
 
 
     class GoodsList {

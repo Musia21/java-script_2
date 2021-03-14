@@ -1,54 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>eShop</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
- <logo>
-    <div class='logo'>
-         
+    <div class="text">
+    <p>'Екатеринбург' — 'один' 'из' 'ведущих' 'спортивных' 'центров' 'в' 'России'.</p>
+    <button class="replace"> Исправление</button>
+
     </div>
-    
- </logo>
- 
-  <header>
-    <input id="search" type='' class="input-main" type="button" placeholder="Поиск">
-    <button class="cart-button button" type="button" id="basket-btn">Корзина</button>
-  </header>
-  <main>
-    <div class="goods-list"> </div>
-       
    
-  </main>
-  <menu>
-     
 
-      <div class="catalog"></div>
-      <div class="sum"></div>
-           <p id=CartPriceall> Общая стоимость товаров: </p>
-
-     
-  </menu>
-  
-  <script src="script.js"></script>
+    <form action="#" method="POST" class="some" id="myform">
+    <div>
+        <label>
+            Введите Ваше имя <br>
+            <input class="add_form" type="text" name="name" id="name" placeholder="Имя">
+        </label>
+    </div>
+    <div>
+        <label>
+            Введите Ваш номер телефона <br>
+            <input class="add_form" type="text" name="phone" id="phone" placeholder="+7(000)000-0000">
+        </label>
+    </div>
+    <div>
+        <label>
+            Введите Ваш email  <br>
+            <input class="add_form" type="text" name="email" id="email" placeholder="email@mail.ru">
+        </label>
+    </div>
+    <div>
+        <label>
+            Оставьте свой отзыв <br>
+            <input class="add_form_text" type="text" name="text" id="text" placeholder="Текст">
+        </label>
+    </div>
+    <button id="val-btn">Отправить</button>
+    </form>
+<script src="./form.js"></script>
+<script src="./replacer.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
