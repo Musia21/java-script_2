@@ -1,0 +1,33 @@
+
+.text{
+    border-bottom: 4px solid black;
+}
+.error-msg{
+    color: red;
+    margin: 10pxs;
+}
+.valid{
+    border: 2px solid green;
+}
+.invalid{
+    border: 2px solid red;
+}
+
+.add_form {
+    width: 200px;
+    height: 23px;
+    text-align: center;
+    color:darkred;
+    margin: 10px;
+}
+
+.add_form_text {
+    width: 220px;
+    min-height: 30px;
+    color:darkred;
+    margin: 10px;
+}
+
+.text {
+    margin-bottom: 30px;
+}
